@@ -1,0 +1,8 @@
+{
+  "name": "github",
+  "version": "0.0.1",
+  "description": "GitHub in the sidebars: PRs waiting on your review, your PRs, the branch's PR and its checks; approve, merge, rerun, review with Claude — on a budget of API calls",
+  "author": {
+    "name": "Ahmed M. Ammar"
+  }
+}

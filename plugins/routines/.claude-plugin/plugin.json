@@ -1,0 +1,8 @@
+{
+  "name": "routines",
+  "version": "0.0.1",
+  "description": "Prompts that run on a schedule: briefings, checks, reminders; in a thread of their own or the assistant's chat",
+  "author": {
+    "name": "Ahmed M. Ammar"
+  }
+}

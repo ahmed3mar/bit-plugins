@@ -1,0 +1,8 @@
+{
+  "name": "security",
+  "version": "0.0.1",
+  "description": "Network capture and security tools",
+  "author": {
+    "name": "Ahmed M. Ammar"
+  }
+}

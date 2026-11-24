@@ -1,0 +1,64 @@
+{
+  "mods": [
+    {
+      "name": "security",
+      "command": [
+        "${BIT_PLUGIN_ROOT}/bin/bit-security",
+        "mod"
+      ]
+    }
+  ],
+  "services": [
+    {
+      "name": "proxy",
+      "command": [
+        "${BIT_PLUGIN_ROOT}/bin/bit-security",
+        "serve"
+      ]
+    }
+  ],
+  "cli": [
+    "proxy"
+  ],
+  "browserProxy": {
+    "addr": "127.0.0.1:7783",
+    "ca": "~/.bit/security/ca.pem",
+    "status": "proxy.status"
+  },
+  "panels": [
+    {
+      "id": "flow",
+      "hidden": true,
+      "title": "Request",
+      "glyph": "server",
+      "ui": true
+    },
+    {
+      "id": "repeater",
+      "title": "Repeater",
+      "glyph": "rotate-cw",
+      "ui": true
+    },
+    {
+      "id": "decoder",
+      "title": "Decoder",
+      "glyph": "key-round",
+      "ui": true
+    }
+  ],
+  "sides": [
+    {
+      "id": "network",
+      "title": "Network",
+      "glyph": "server",
+      "ui": true
+    }
+  ],
+  "binaries": "https://github.com/ahmed3mar/bit-plugins/releases/download/security-v${VERSION}/bit-security_${OS}_${ARCH}.tar.gz",
+  "platforms": [
+    "darwin/arm64",
+    "darwin/amd64",
+    "linux/amd64",
+    "linux/arm64"
+  ]
+}

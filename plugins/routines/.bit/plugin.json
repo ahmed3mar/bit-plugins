@@ -1,0 +1,43 @@
+{
+  "services": [
+    {
+      "name": "routines",
+      "command": [
+        "${BIT_PLUGIN_ROOT}/bin/bit-routines",
+        "serve"
+      ]
+    }
+  ],
+  "mods": [
+    {
+      "name": "routines",
+      "command": [
+        "${BIT_PLUGIN_ROOT}/bin/bit-routines",
+        "mod"
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "id": "routines",
+      "title": "Routines",
+      "glyph": "clock",
+      "ui": true
+    }
+  ],
+  "sides": [
+    {
+      "id": "runs",
+      "title": "Runs",
+      "glyph": "clock",
+      "ui": true
+    }
+  ],
+  "binaries": "https://github.com/ahmed3mar/bit-plugins/releases/download/routines-v${VERSION}/bit-routines_${OS}_${ARCH}.tar.gz",
+  "platforms": [
+    "darwin/arm64",
+    "darwin/amd64",
+    "linux/amd64",
+    "linux/arm64"
+  ]
+}

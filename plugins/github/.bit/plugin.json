@@ -1,0 +1,128 @@
+{
+  "services": [
+    {
+      "name": "github",
+      "command": [
+        "${BIT_PLUGIN_ROOT}/bin/bit-github",
+        "serve"
+      ]
+    }
+  ],
+  "sides": [
+    {
+      "id": "review",
+      "title": "Review Requests",
+      "glyph": "eye",
+      "items": [
+        "${BIT_PLUGIN_ROOT}/bin/bit-github",
+        "items",
+        "review"
+      ],
+      "refresh": 10
+    },
+    {
+      "id": "mine",
+      "title": "My PRs",
+      "glyph": "git-compare",
+      "items": [
+        "${BIT_PLUGIN_ROOT}/bin/bit-github",
+        "items",
+        "mine"
+      ],
+      "refresh": 10
+    },
+    {
+      "id": "branch",
+      "title": "Pull Request",
+      "glyph": "git-compare",
+      "project": true,
+      "refresh": 5,
+      "items": [
+        "${BIT_PLUGIN_ROOT}/bin/bit-github",
+        "items",
+        "branch"
+      ]
+    }
+  ],
+  "panels": [
+    {
+      "id": "pr",
+      "hidden": true,
+      "title": "Pull Request",
+      "glyph": "git-compare",
+      "url": "http://127.0.0.1:7782/pr"
+    },
+    {
+      "id": "logs",
+      "hidden": true,
+      "title": "Run Logs",
+      "glyph": "scroll-text",
+      "command": [
+        "${BIT_PLUGIN_ROOT}/bin/bit-github",
+        "logs",
+        "${DATA}"
+      ]
+    },
+    {
+      "id": "review",
+      "title": "PR Review",
+      "hidden": true,
+      "glyph": "sparkles",
+      "command": [
+        "${BIT_PLUGIN_ROOT}/bin/bit-github",
+        "review",
+        "${DATA}"
+      ]
+    }
+  ],
+  "actions": {
+    "approve": [
+      "${BIT_PLUGIN_ROOT}/bin/bit-github",
+      "do",
+      "approve",
+      "${ITEM}"
+    ],
+    "merge": [
+      "${BIT_PLUGIN_ROOT}/bin/bit-github",
+      "do",
+      "merge",
+      "${ITEM}"
+    ],
+    "ready": [
+      "${BIT_PLUGIN_ROOT}/bin/bit-github",
+      "do",
+      "ready",
+      "${ITEM}"
+    ],
+    "checkout": [
+      "${BIT_PLUGIN_ROOT}/bin/bit-github",
+      "do",
+      "checkout",
+      "${ITEM}"
+    ],
+    "rerun": [
+      "${BIT_PLUGIN_ROOT}/bin/bit-github",
+      "do",
+      "rerun",
+      "${ITEM}"
+    ],
+    "cancel": [
+      "${BIT_PLUGIN_ROOT}/bin/bit-github",
+      "do",
+      "cancel",
+      "${ITEM}"
+    ],
+    "set": [
+      "${BIT_PLUGIN_ROOT}/bin/bit-github",
+      "set",
+      "${ITEM}"
+    ]
+  },
+  "binaries": "https://github.com/ahmed3mar/bit-plugins/releases/download/github-v${VERSION}/bit-github_${OS}_${ARCH}.tar.gz",
+  "platforms": [
+    "darwin/arm64",
+    "darwin/amd64",
+    "linux/amd64",
+    "linux/arm64"
+  ]
+}

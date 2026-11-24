@@ -1,0 +1,9 @@
+{
+  "name": "simulator",
+  "version": "0.0.1",
+  "description": "iOS Simulator and Android emulator: see, tap, type, install, launch, logs",
+  "skills": "./skills",
+  "author": {
+    "name": "Ahmed M. Ammar"
+  }
+}

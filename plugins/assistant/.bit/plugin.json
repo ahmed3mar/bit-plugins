@@ -1,0 +1,78 @@
+{
+  "services": [
+    {
+      "name": "gateway",
+      "command": [
+        "${BIT_PLUGIN_ROOT}/bin/bit-assistant",
+        "gateway"
+      ]
+    }
+  ],
+  "mods": [
+    {
+      "name": "assistant",
+      "command": [
+        "${BIT_PLUGIN_ROOT}/bin/bit-assistant",
+        "mod"
+      ]
+    }
+  ],
+  "panels": [
+    {
+      "id": "conversation",
+      "title": "Assistant",
+      "glyph": "sparkles",
+      "ui": true
+    },
+    {
+      "id": "request",
+      "hidden": true,
+      "title": "Ask",
+      "glyph": "list-checks",
+      "ui": true
+    },
+    {
+      "id": "person",
+      "hidden": true,
+      "title": "Person",
+      "glyph": "user",
+      "ui": true
+    },
+    {
+      "id": "note",
+      "hidden": true,
+      "title": "Note",
+      "glyph": "pencil",
+      "ui": true
+    },
+    {
+      "id": "instructions",
+      "hidden": true,
+      "title": "Instructions",
+      "glyph": "pencil",
+      "ui": true
+    },
+    {
+      "id": "permissions",
+      "hidden": true,
+      "title": "Tool permissions",
+      "glyph": "list-checks",
+      "ui": true
+    }
+  ],
+  "sides": [
+    {
+      "id": "inbox",
+      "title": "Assistant",
+      "glyph": "sparkles",
+      "ui": true
+    }
+  ],
+  "binaries": "https://github.com/ahmed3mar/bit-plugins/releases/download/assistant-v${VERSION}/bit-assistant_${OS}_${ARCH}.tar.gz",
+  "platforms": [
+    "darwin/arm64",
+    "darwin/amd64",
+    "linux/amd64",
+    "linux/arm64"
+  ]
+}

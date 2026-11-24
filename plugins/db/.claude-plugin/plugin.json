@@ -1,0 +1,8 @@
+{
+  "name": "db",
+  "version": "0.0.1",
+  "description": "Database connections: MySQL, Postgres and SQLite; browse schemas and run queries, read-only by default",
+  "author": {
+    "name": "Ahmed M. Ammar"
+  }
+}

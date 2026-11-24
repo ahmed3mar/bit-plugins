@@ -1,0 +1,45 @@
+{
+  "mods": [
+    {
+      "name": "db",
+      "command": [
+        "${BIT_PLUGIN_ROOT}/bin/bit-db",
+        "mod"
+      ]
+    }
+  ],
+  "cli": [
+    "db"
+  ],
+  "sides": [
+    {
+      "id": "connections",
+      "title": "Databases",
+      "glyph": "layers",
+      "ui": true
+    }
+  ],
+  "panels": [
+    {
+      "id": "query",
+      "hidden": true,
+      "title": "Query",
+      "glyph": "terminal",
+      "ui": true
+    },
+    {
+      "id": "table",
+      "hidden": true,
+      "title": "Table",
+      "glyph": "rows-2",
+      "ui": true
+    }
+  ],
+  "binaries": "https://github.com/ahmed3mar/bit-plugins/releases/download/db-v${VERSION}/bit-db_${OS}_${ARCH}.tar.gz",
+  "platforms": [
+    "darwin/arm64",
+    "darwin/amd64",
+    "linux/amd64",
+    "linux/arm64"
+  ]
+}

@@ -1,7 +1,73 @@
 {
   "name": "bit",
-  "owner": {"name": "Bit", "url": "https://github.com/ahmed3mar/bit-plugins"},
+  "owner": {
+    "name": "Bit",
+    "url": "https://github.com/ahmed3mar/bit-plugins"
+  },
   "description": "Bit's own plugins",
-  "metadata": {"pluginRoot": "./plugins"},
-  "plugins": []
+  "metadata": {
+    "pluginRoot": "./plugins"
+  },
+  "plugins": [
+    {
+      "name": "assistant",
+      "source": "assistant",
+      "description": "A virtual you: answers on Telegram and Slack, keeps todos, opens other agents for work",
+      "category": "Developer Tools",
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      }
+    },
+    {
+      "name": "db",
+      "source": "db",
+      "description": "Database connections: MySQL, Postgres and SQLite; browse schemas and run queries, read-only by default",
+      "category": "Developer Tools",
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      }
+    },
+    {
+      "name": "github",
+      "source": "github",
+      "description": "GitHub in the sidebars: PRs waiting on your review, your PRs, the branch's PR and its checks; approve, merge, rerun, review with Claude — on a budget of API calls",
+      "category": "Developer Tools",
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      }
+    },
+    {
+      "name": "routines",
+      "source": "routines",
+      "description": "Prompts that run on a schedule: briefings, checks, reminders; in a thread of their own or the assistant's chat",
+      "category": "Developer Tools",
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      }
+    },
+    {
+      "name": "security",
+      "source": "security",
+      "description": "Network capture and security tools",
+      "category": "Developer Tools",
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      }
+    },
+    {
+      "name": "simulator",
+      "source": "simulator",
+      "description": "iOS Simulator and Android emulator: see, tap, type, install, launch, logs",
+      "category": "Developer Tools",
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      }
+    }
+  ]
 }

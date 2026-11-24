@@ -1,0 +1,41 @@
+{
+  "mods": [
+    {
+      "name": "simulator",
+      "command": [
+        "${BIT_PLUGIN_ROOT}/bin/bit-sim",
+        "mod"
+      ]
+    }
+  ],
+  "cli": [
+    "sim"
+  ],
+  "panels": [
+    {
+      "id": "screen",
+      "title": "Simulator",
+      "glyph": "smartphone",
+      "url": "http://127.0.0.1:${PORT}/#k=${TOKEN}&d=${DATA}",
+      "start": [
+        "${BIT_PLUGIN_ROOT}/bin/bit-sim",
+        "serve",
+        "--port",
+        "${PORT}"
+      ]
+    }
+  ],
+  "sides": [
+    {
+      "id": "devices",
+      "title": "Devices",
+      "glyph": "smartphone",
+      "ui": true
+    }
+  ],
+  "binaries": "https://github.com/ahmed3mar/bit-plugins/releases/download/simulator-v${VERSION}/bit-sim_${OS}_${ARCH}.tar.gz",
+  "platforms": [
+    "darwin/arm64",
+    "darwin/amd64"
+  ]
+}
