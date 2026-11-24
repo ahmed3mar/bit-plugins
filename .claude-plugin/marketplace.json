@@ -1,0 +1,7 @@
+{
+  "name": "bit",
+  "owner": {"name": "Bit", "url": "https://github.com/ahmed3mar/bit-plugins"},
+  "description": "Bit's own plugins",
+  "metadata": {"pluginRoot": "./plugins"},
+  "plugins": []
+}

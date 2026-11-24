@@ -1,0 +1,85 @@
+name: Release plugins
+
+# This repository owns the plugins' public files and programs. Their source
+# is checked out from the private repository at `ref` using SOURCE_TOKEN; a
+# plugin is released when its version has no <name>-v<version> release yet.
+on:
+  workflow_dispatch:
+    inputs:
+      plugins:
+        description: plugins to release, space-separated (blank for every plugin with a new version)
+        required: false
+        type: string
+      ref:
+        description: source branch, tag or commit
+        required: false
+        default: main
+        type: string
+      force:
+        description: build again those released already (replaces their files)
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency: release
+
+env:
+  # The private source repository (owner/name), kept as a secret so it never shows in logs.
+  SOURCE_REPO: ${{ secrets.SOURCE_REPO }}
+
+jobs:
+  release:
+    name: build and publish
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Checkout private source
+        uses: actions/checkout@v5
+        with:
+          repository: ${{ env.SOURCE_REPO }}
+          ref: ${{ inputs.ref || 'main' }}
+          token: ${{ secrets.SOURCE_TOKEN }}
+          path: .source
+          fetch-depth: 1
+
+      # Every plugin is pure Go (no cgo), so one runner cross-compiles them all.
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: .source/go.mod
+          cache-dependency-path: .source/plugins/*/go.sum
+
+      - name: Build
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FORCE: ${{ inputs.force && '1' || '' }}
+        run: ./release.sh .source "${{ github.repository }}" ${{ inputs.plugins }}
+
+      # Releases first, the manifests after: a manifest never names a
+      # release that isn't there.
+      - name: Publish releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          while read -r tag; do
+            [[ -n "$tag" ]] || continue
+            if gh release view "$tag" >/dev/null 2>&1; then
+              gh release upload "$tag" dist/"$tag"/* --clobber
+            else
+              gh release create "$tag" dist/"$tag"/* --title "${tag%-v*} ${tag##*-v}" --notes "${tag%-v*} plugin ${tag##*-v}"
+            fi
+          done < dist/tags
+
+      - name: Commit the public files
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add plugins .claude-plugin/marketplace.json
+          git commit -m "release: $(paste -sd' ' dist/tags)" || { echo "nothing changed"; exit 0; }
+          git push
