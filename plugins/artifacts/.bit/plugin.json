@@ -1,0 +1,43 @@
+{
+  "mods": [
+    {
+      "name": "artifacts",
+      "command": [
+        "${BIT_PLUGIN_ROOT}/bin/bit-artifacts",
+        "mod"
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "id": "artifacts",
+      "title": "Artifacts",
+      "glyph": "sparkles",
+      "ui": true
+    }
+  ],
+  "panels": [
+    {
+      "id": "editor",
+      "title": "Document",
+      "glyph": "file-text",
+      "url": "http://127.0.0.1:${PORT}/#k=${TOKEN}&d=${DATA}",
+      "start": [
+        "${BIT_PLUGIN_ROOT}/bin/bit-artifacts",
+        "serve",
+        "--port",
+        "${PORT}"
+      ],
+      "hidden": true,
+      "bare": true,
+      "chat": true
+    }
+  ],
+  "binaries": "https://github.com/ahmed3mar/bit-plugins/releases/download/artifacts-v${VERSION}/bit-artifacts_${OS}_${ARCH}.tar.gz",
+  "platforms": [
+    "darwin/arm64",
+    "darwin/amd64",
+    "linux/amd64",
+    "linux/arm64"
+  ]
+}

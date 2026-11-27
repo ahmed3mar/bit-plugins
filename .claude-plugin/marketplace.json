@@ -10,6 +10,16 @@
   },
   "plugins": [
     {
+      "name": "artifacts",
+      "source": "artifacts",
+      "description": "Every thread's artifacts on one page of the sidebar: open, share and delete them, or make something new",
+      "category": "Developer Tools",
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      }
+    },
+    {
       "name": "assistant",
       "source": "assistant",
       "description": "A virtual you: answers on Telegram and Slack, keeps todos, opens other agents for work",
@@ -63,6 +73,16 @@
       "name": "simulator",
       "source": "simulator",
       "description": "iOS Simulator and Android emulator: see, tap, type, install, launch, logs",
+      "category": "Developer Tools",
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      }
+    },
+    {
+      "name": "worker",
+      "source": "worker",
+      "description": "This machine as a worker of a cloud org: bit worker runs the org's tasks on it",
       "category": "Developer Tools",
       "policy": {
         "installation": "AVAILABLE",

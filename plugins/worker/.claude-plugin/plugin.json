@@ -1,0 +1,8 @@
+{
+  "name": "worker",
+  "version": "0.0.1",
+  "description": "Bit Cloud work, both ways: bit worker runs the org's tasks on this machine; /delegate (bit cloud delegate) hands a thread to a worker, /pull takes its work back",
+  "author": {
+    "name": "Ahmed M. Ammar"
+  }
+}

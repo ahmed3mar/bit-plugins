@@ -1,0 +1,8 @@
+{
+  "name": "artifacts",
+  "version": "0.0.1",
+  "description": "Every thread's artifacts on one page of the sidebar: open, share and delete them, or make something new",
+  "author": {
+    "name": "Ahmed M. Ammar"
+  }
+}

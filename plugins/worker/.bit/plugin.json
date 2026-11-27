@@ -1,0 +1,9 @@
+{
+  "binaries": "https://github.com/ahmed3mar/bit-plugins/releases/download/worker-v${VERSION}/bit-worker_${OS}_${ARCH}.tar.gz",
+  "platforms": [
+    "darwin/arm64",
+    "darwin/amd64",
+    "linux/amd64",
+    "linux/arm64"
+  ]
+}
